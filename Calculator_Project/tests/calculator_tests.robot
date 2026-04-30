@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ../Calculator.py
+Library    ../resources/Calculator.py
 
 *** Test Cases ***
 Validate Addition Logic

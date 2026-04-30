@@ -1,5 +1,6 @@
 import pytest
-from Calculator_Project.Calculator import Calculator
+from Calculator_Project.resources.Calculator import Calculator
+
 
 @pytest.fixture
 def calc():
