@@ -15,11 +15,15 @@ class Calculator:
         self.history = []  # This stores state!
 
     def add_numbers(self, a, b):
-        result = a + b
-        # 'also_console=True' ensures the log appears in both the log.html and your terminal
-        logger.info(f"Adding {a} + {b} = {result}", console=True)
-        self.history.append(f"{a}+{b}={result}")
-        return result
+        try:
+            result = a + b
+        except TypeError as e:
+            logger.error(f"TypeError: {e}", console=True, html=True)
+        else:
+            # 'also_console=True' ensures the log appears in both the log.html and your terminal
+            logger.info(f"Adding {a} + {b} = {result}", console=True)
+            self.history.append(f"{a}+{b}={result}")
+            return result
 
     def divide_numbers(self, a, b):
         if b == 0:
