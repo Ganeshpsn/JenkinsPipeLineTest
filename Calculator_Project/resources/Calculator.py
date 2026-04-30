@@ -44,7 +44,12 @@ class Calculator:
         return result
 
     def get_calculator_history(self):
+        history_text = "\n".join(self.history)
+        logger.info(
+            f"\n{'=' * 25}\nCalculator History\n"
+            f"{'-' * 25}\n{history_text}\n{'=' * 25}",
+            console=True,
+            html=True
+        )
 
-        logger.info(f"\n{'='*25}\nCalculator History\n"
-                    f"{'-'*25}\n{'\n'.join(self.history)} \n{'='*25}", console=True, html=True)
         return self.history
