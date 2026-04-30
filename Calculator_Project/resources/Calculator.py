@@ -42,3 +42,9 @@ class Calculator:
         logger.info(f"Multiplying {a} and {b} = {result}", console=True)
         self.history.append(f"{a}*{b}={result}")
         return result
+
+    def get_calculator_history(self):
+
+        logger.info(f"\n{'='*25}\nCalculator History\n"
+                    f"{'-'*25}\n{'\n'.join(self.history)} \n{'='*25}", console=True, html=True)
+        return self.history

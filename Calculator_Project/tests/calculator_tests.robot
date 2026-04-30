@@ -13,6 +13,7 @@ Validate Division Edge Case
     ${result}=    Divide Numbers    ${10}    ${2}
     Log To Console    \nDivision Result: ${result}
     Should Be Equal As Numbers    ${result}    5
+    ${history}=    Get calculator history
 
 Validate Subtraction With Negatives
     ${result}=    Subtract Numbers   ${-5}    ${-5}
