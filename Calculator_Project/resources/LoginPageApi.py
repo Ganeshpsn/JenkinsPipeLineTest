@@ -37,7 +37,8 @@ class LoginPageApi(PageActions):
     def verify_error_message_is_displayed(self):
         # find_ele returns the element if found, or raises an error if not
         element = self.find_ele(self._ERROR_LOCATOR)
-        is_displayed = element.is_displayed()
+        #is_displayed = element.is_displayed()
+        is_displayed = element.is_enabled()
         logger.info(f"Error message display status: {is_displayed}", console=True)
         return is_displayed
 

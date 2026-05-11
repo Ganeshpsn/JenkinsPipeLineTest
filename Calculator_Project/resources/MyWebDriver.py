@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from robot.api import logger
 
 
@@ -7,13 +8,23 @@ class MyWebDriver:
     def __init__(self):
         self.driver = None
 
-    def start_browser(self, browser="chrome"):
+    def start_browser(self, browser="chrome", headless=False):
         # Log an INFO message so you know which browser is launching
-        logger.info(f"Attempting to start {browser} browser...")
+        logger.info(f"Attempting to start {browser} browser with headless {headless}...")
 
         try:
             if browser.lower() == "chrome":
-                self.driver = webdriver.Chrome()
+                if headless:
+                    options = Options()
+                    options.add_argument("--headless=new")
+                    options.add_argument("--no-sandbox")
+                    options.add_argument("--disable-dev-shm-usage")
+                    options.add_argument("--disable-gpu")
+                    options.add_argument("--disable-software-rasterizer")
+
+                    self.driver = webdriver.Chrome(options=options)
+                else:
+                    self.driver = webdriver.Chrome()
             elif browser.lower() == "firefox":
                 self.driver = webdriver.Firefox()
             else:

@@ -3,7 +3,7 @@
 Library    ../resources/LoginPageApi.py
 
 
-Suite Setup    Run Keywords    Access Class Variable    AND    Start Browser    chrome
+Suite Setup    Run Keywords    Access Class Variable    AND    Start Browser    chrome    ${HEADLESS}
 
 Suite Teardown    Quit Browser
 
