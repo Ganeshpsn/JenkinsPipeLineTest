@@ -37,7 +37,7 @@ pipeline {
                 // We explicitly list the two files you want to execute. 
                 // Robot Framework will combine them into a single test suite execution.
                 sh '''
-                   robot -d reports \
+                   robot -d reports --variable HEADLESS:True \
                    Calculator_Project/tests/Login_Page_Tests.robot \
                    Calculator_Project/tests/calculator_tests.robot
                 '''
