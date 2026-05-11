@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run Unit Tests') {
             steps {
-                sh 'python -m pytest Calculator_Project/tests/test_calculator.py --junitxml=results/pytest_report.xml'
+                sh 'python -m pytest -vs Calculator_Project/tests/test_calculator.py --junitxml=results/pytest_report.xml'
             }
         }
 
